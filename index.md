@@ -19,7 +19,7 @@ Ce script permet d'ajouter des fonctionnalités à MBN, l'ENT *(Environement Num
     * ***OPERA***: Regarder les instructions spécifiques pour Opéra: [Opéra User JS](http://www.opera.com/docs/userjs/).
     * ***SAFARI***: Installer [NinjaKit](http://d.hatena.ne.jp/os0x/20100612/1276330696).
 
-2. Installer la **Suite d'ajouts MonBureauNumérique** via le [lien de téléchargement du script](https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-average-part.js).
+2. Installer la **Suite d'ajouts MonBureauNumérique** via le [lien de téléchargement du script](https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-enhancement-suite.js).
 Vous pouvez aussi prendre l'une des 2 parties actuelle du script.
 * Partie Moyenne dans la page Evaluation : [Téléchargement ici](https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-average-part.js)
 * Partie Section dans la page d'Accueil : [Téléchargement la](https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-eval-in-home-part.js)
@@ -50,7 +50,7 @@ This script allows you to add functionalities to MBN, the ENT *(Digital Work Env
     * ***OPERA***: Watch specific instructions for Opera: [Opera User JS](http://www.opera.com/docs/userjs/).
     * ***SAFARI***: Install [NinjaKit](http://d.hatena.ne.jp/os0x/20100612/1276330696).
 
-2. Install the **MBN Enhancement Suite** via the [script download link](https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-average-part.js ).
+2. Install the **MBN Enhancement Suite** via the [script download link](https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-enhancement-suite.js ).
 You can also take one of the 2 current parts of the script.
 * Part Average in Rating page: [Download here](https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-average-part.js)
 * Part Section in the Home page: [Download there](https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-eval-in-home-part.js)
