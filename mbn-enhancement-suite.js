@@ -25,61 +25,62 @@ const consoleClear = true;
 
 (function () {
     'use strict';
+    var url = window.location.hostname;
+    if (!url.includes("moodle") && !url.includes("moodle")) {
+        if (average)(function () {
+            var elements = document.getElementsByClassName("yui-dt-liner bulletin-note bulletin-note-eleve");
 
-    if (average)(function () {
-        var elements = document.getElementsByClassName("yui-dt-liner bulletin-note bulletin-note-eleve");
-
-        function moyenne(e, t) {
-            var l = 0,
-                n = 0;
-            return Object.keys(e).forEach(function (t, i) {
-                n += e[t], l++
-            }, e), e = void 0, n /= l
-        }
-
-        function addDecimal(e, t = 0) {
-            e = !t ?
-                Math.round(10 * e) / 10 : Math.round(100 * e) / 100;
-            return (e = new String(e)).include(".") ? e : e + ".0"
-            //return (e = new String(e)).include(".") ? e : e + ".0"
-        }
-        if (elements != null) {
-            var tmp, matieres = [];
-            for (let e = 0; e < document.getElementsByClassName("yui-dt-liner bulletin-note bulletin-note-eleve").length; e++) {
-                if (tmp = parseFloat(new String(document.getElementsByClassName("yui-dt-liner bulletin-note bulletin-note-eleve")[e].innerText).replace(",", ".")),
-                    aa = document.getElementsByClassName("bulletin-matiere-libelle ellipse fw-700")[e].innerText, "number" != typeof matieres[aa]) {
-                    matieres[aa] = tmp;
-                } else {
-                    matieres[aa] = moyenne([matieres[aa], tmp]);
-
-                    /*var aaa = document.getElementsByClassName("bulletin-matiere-libelle ellipse fw-700")[5].parentElement.parentElement.parentElement.parentElement.lastElementChild.firstChild.firstChild.children;
-
-                    for (let e = 0; e < aaa.length; e++) {
-                        console.log([aaa[e]], e);
-                        //aaa[e].classList.add("devoir-facultatif"), aaa[e].children[0].classList.add("devoir-facultatif-note"), aaa[e].children[0].style.color = "#bababa", aaa[e].children[1].classList.add("devoir-facultatif-bareme");
-                    }*/
-
-                    console.log(e)
-
-                    var aaa = document.getElementsByClassName("bulletin-matiere-libelle ellipse fw-700")[e].parentElement.parentElement.parentElement.parentElement;
-                    //console.log(aaa.getElementsByClassName("list-devoirs-eleve")[0].children);
-                    Array.prototype.slice.call(aaa.getElementsByClassName("list-devoirs-eleve")[0].children).forEach(element => {
-                        element.classList.add("devoir-facultatif");
-                        element.children[0].classList.add("devoir-facultatif-note");
-                        element.children[1].classList.add("devoir-facultatif-bareme");
-                    });
-                    aaa.style.color = "#6e6e6e";
-                    aaa.firstChild.style.transform = "translateX(15px)";
-                    aaa.firstChild.style.boxShadow = "-6px 0 #6e6e6e4f"
-                }
+            function moyenne(e, t) {
+                var l = 0,
+                    n = 0;
+                return Object.keys(e).forEach(function (t, i) {
+                    n += e[t], l++
+                }, e), e = void 0, n /= l
             }
-            var tr = document.createElement("tr");
 
-            var name = document.getElementsByClassName("user")[0].children[0].innerText;
+            function addDecimal(e, t = 0) {
+                e = !t ?
+                    Math.round(10 * e) / 10 : Math.round(100 * e) / 100;
+                return (e = new String(e)).include(".") ? e : e + ".0"
+                //return (e = new String(e)).include(".") ? e : e + ".0"
+            }
+            if (elements != null) {
+                var tmp, matieres = [];
+                for (let e = 0; e < document.getElementsByClassName("yui-dt-liner bulletin-note bulletin-note-eleve").length; e++) {
+                    if (tmp = parseFloat(new String(document.getElementsByClassName("yui-dt-liner bulletin-note bulletin-note-eleve")[e].innerText).replace(",", ".")),
+                        aa = document.getElementsByClassName("bulletin-matiere-libelle ellipse fw-700")[e].innerText, "number" != typeof matieres[aa]) {
+                        matieres[aa] = tmp;
+                    } else {
+                        matieres[aa] = moyenne([matieres[aa], tmp]);
 
-            tr.classList = "yui-dt-last yui-dt-odd";
+                        /*var aaa = document.getElementsByClassName("bulletin-matiere-libelle ellipse fw-700")[5].parentElement.parentElement.parentElement.parentElement.lastElementChild.firstChild.firstChild.children;
 
-            tr.innerHTML = `
+                        for (let e = 0; e < aaa.length; e++) {
+                            console.log([aaa[e]], e);
+                            //aaa[e].classList.add("devoir-facultatif"), aaa[e].children[0].classList.add("devoir-facultatif-note"), aaa[e].children[0].style.color = "#bababa", aaa[e].children[1].classList.add("devoir-facultatif-bareme");
+                        }*/
+
+                        console.log(e)
+
+                        var aaa = document.getElementsByClassName("bulletin-matiere-libelle ellipse fw-700")[e].parentElement.parentElement.parentElement.parentElement;
+                        //console.log(aaa.getElementsByClassName("list-devoirs-eleve")[0].children);
+                        Array.prototype.slice.call(aaa.getElementsByClassName("list-devoirs-eleve")[0].children).forEach(element => {
+                            element.classList.add("devoir-facultatif");
+                            element.children[0].classList.add("devoir-facultatif-note");
+                            element.children[1].classList.add("devoir-facultatif-bareme");
+                        });
+                        aaa.style.color = "#6e6e6e";
+                        aaa.firstChild.style.transform = "translateX(15px)";
+                        aaa.firstChild.style.boxShadow = "-6px 0 #6e6e6e4f"
+                    }
+                }
+                var tr = document.createElement("tr");
+
+                var name = document.getElementsByClassName("user")[0].children[0].innerText;
+
+                tr.classList = "yui-dt-last yui-dt-odd";
+
+                tr.innerHTML = `
             <td headers="yui-dt0-th-matiere" class="yui-dt0-col-matiere yui-dt-col-matiere yui-dt-sortable yui-dt-first" style="width: 150px;">
                 <div class="yui-dt-liner">
                     <div class="bulletin-matiere-ligne">
@@ -122,46 +123,41 @@ const consoleClear = true;
             </td>
             `;
 
-            if (document.getElementsByClassName("yui-dt-data")[0] != undefined)
-                document.getElementsByClassName("yui-dt-data")[0].appendChild(tr);
+                if (document.getElementsByClassName("yui-dt-data")[0] != undefined)
+                    document.getElementsByClassName("yui-dt-data")[0].appendChild(tr);
 
-            var aa = [];
-            var bb = 0;
+                var aa = [];
+                var bb = 0;
 
-            document.getElementsByClassName("bulletin-note");
+                document.getElementsByClassName("bulletin-note");
 
-            for (let e = 0; e < document.getElementsByClassName("yui-dt-liner bulletin-note").length; e++) {
-                String(document.getElementsByClassName("yui-dt-liner bulletin-note")[e].innerHTML).include("txt-center") && aa.push(document.getElementsByClassName("yui-dt-liner bulletin-note")[e].children[0]);
+                for (let e = 0; e < document.getElementsByClassName("yui-dt-liner bulletin-note").length; e++) {
+                    String(document.getElementsByClassName("yui-dt-liner bulletin-note")[e].innerHTML).include("txt-center") && aa.push(document.getElementsByClassName("yui-dt-liner bulletin-note")[e].children[0]);
+                }
+
+                if (typeof aa.each == "function") {
+                    aa.each(e => {
+                        "" == e.id && (bb += parseInt(e.innerHTML))
+                    });
+
+                    document.getElementById("__moyenne__").innerHTML = addDecimal(new String(moyenne(matieres).toString()), 1).replace(".", ",");
+                    document.getElementById("__notes__").appendChild(document.createTextNode(bb));
+                    document.getElementById("__tagsmoy__").innerHTML = addDecimal(new String(moyenne(matieres, !0).toString()), 1).replace(".", ",");
+
+                    var min = 1 / 0;
+                    var max = 0;
+
+                    Object.keys(matieres).forEach(function (e, t) {
+                        let mat = matieres[e];
+                        mat > max ? max = mat : mat < min && (min = mat)
+                    }, matieres);
+
+                    document.getElementsByClassName("yui-dt-liner bulletin-note").__tagsmin__.innerHTML = addDecimal(new String(min)).replace(".", ",");
+                    document.getElementsByClassName("yui-dt-liner bulletin-note").__tagsmax__.innerHTML = addDecimal(new String(max)).replace(".", ",");
+                }
             }
-
-            if (typeof aa.each == "function") {
-                aa.each(e => {
-                    "" == e.id && (bb += parseInt(e.innerHTML))
-                });
-
-                document.getElementById("__moyenne__").innerHTML = addDecimal(new String(moyenne(matieres).toString()), 1).replace(".", ",");
-                document.getElementById("__notes__").appendChild(document.createTextNode(bb));
-                document.getElementById("__tagsmoy__").innerHTML = addDecimal(new String(moyenne(matieres, !0).toString()), 1).replace(".", ",");
-
-                var min = 1 / 0;
-                var max = 0;
-
-                Object.keys(matieres).forEach(function (e, t) {
-                    let mat = matieres[e];
-                    mat > max ? max = mat : mat < min && (min = mat)
-                }, matieres);
-
-                document.getElementsByClassName("yui-dt-liner bulletin-note").__tagsmin__.innerHTML = addDecimal(new String(min)).replace(".", ",");
-                document.getElementsByClassName("yui-dt-liner bulletin-note").__tagsmax__.innerHTML = addDecimal(new String(max)).replace(".", ",");
-            }
-        }
-    })();
-
-    if (consoleClear) {
-        console.clear();
-        console.log("%cMonBureauNumérique Average ️\n%cMoyenne dans le tableau Evaluations%c\nFrom the/Provient de MBN Enhancement Suite%c\nAjoute des fonctions utiles à MonBureauNumérique (ENT Grand-Est)\n© 2020 NonozgYtb\nVersion: %c1.0%c\n\nSource: https://github.com/NonozgYtb/mbn-enhancement-suite\n", "font-size: 25px; font-family: Arial;font-weight: bold;", "font-size: 18px; font-family: Arial;font-weight: bold; padding: 10px 0;", "color: #aaa; font-style: italic;", "color: #aaa", "color: #009378", "color: #aaa")
+        })();
     }
-
     if (evalInHome && location.search.includes("PAGE_ACCUEIL"))
         (() => {
             var c = document.createElement("iframe");
@@ -169,7 +165,7 @@ const consoleClear = true;
             c.classList = "col--xs-12 col--lg-12";
             c.style.height = "-webkit-fill-available";
             c.id = "iiiidddd";
-            c.src = "https://clg-anne-frank-illzach.monbureaunumerique.fr/sg.do?PROC=CONSULTER_RELEVE&amp;ACTION=AFFICHER_RELEVE_NOTES_ELEVE";
+            c.src = "https://"+url+"/sg.do?PROC=CONSULTER_RELEVE&amp;ACTION=AFFICHER_RELEVE_NOTES_ELEVE";
             var r = document.createElement("ul");
             var y = document.createElement("div");
             y.classList = "panel panel--outlined";
@@ -191,4 +187,17 @@ const consoleClear = true;
             })
         })()
 
+
+    if (consoleClear) {
+        console.clear();
+        console.log(
+            "%cMonBureauNumérique Enhancement Suite ️\n%cSuite d'ajouts MonBureauNumérique%c\nAjoute des fonctions utiles à MonBureauNumérique (ENT Grand-Est)\n© 2020 NonozgYtb\nVersion: %c1.0%c\nActivation: %c" + (!url.includes("moodle") && !url.includes("moodle")).toString() + "%c\n\nSource: https://github.com/NonozgYtb/mbn-enhancement-suite\n", 
+            "font-size: 25px; font-family: Arial;font-weight: bold;", 
+            "font-size: 18px; font-family: Arial;font-weight: bold; padding: 10px 0;", 
+            "color: #aaa", 
+            "color: #009378", 
+            "color: #aaa", 
+            "color: #009378", 
+            "color: #aaa")
+    }
 })();
