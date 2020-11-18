@@ -8,7 +8,7 @@
 // @icon           https://cdn.monbureaunumerique.fr/images/favicon.ico
 // @downloadURL    https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-eval-in-home-part.js
 // @updateURL      https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-eval-in-home-part.js
-// @version        1.0
+// @version        1.1
 // ==/UserScript==
 
 const evalInHome = true;
