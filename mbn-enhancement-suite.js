@@ -8,7 +8,7 @@
 // @icon           https://cdn.monbureaunumerique.fr/images/favicon.ico
 // @downloadURL    https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-enhancement-suite.js
 // @updateURL      https://github.com/NonozgYtb/mbn-enhancement-suite/blob/master/mbn-enhancement-suite.js
-// @version        1.0
+// @version        1.1
 // ==/UserScript==
 
 const evalInHome = true;
@@ -190,14 +190,6 @@ const consoleClear = true;
 
     if (consoleClear) {
         console.clear();
-        console.log(
-            "%cMonBureauNumérique Enhancement Suite ️\n%cSuite d'ajouts MonBureauNumérique%c\nAjoute des fonctions utiles à MonBureauNumérique (ENT Grand-Est)\n© 2020 NonozgYtb\nVersion: %c1.0%c\nActivation: %c" + (!url.includes("moodle") && !url.includes("moodle")).toString() + "%c\n\nSource: https://github.com/NonozgYtb/mbn-enhancement-suite\n", 
-            "font-size: 25px; font-family: Arial;font-weight: bold;", 
-            "font-size: 18px; font-family: Arial;font-weight: bold; padding: 10px 0;", 
-            "color: #aaa", 
-            "color: #009378", 
-            "color: #aaa", 
-            "color: #009378", 
-            "color: #aaa")
+        console.log("%cMonBureauNumérique Enhancement Suite ️\n%cSuite d'ajouts MonBureauNumérique%c\nAjoute des fonctions utiles à MonBureauNumérique (ENT Grand-Est)\n© 2020 NonozgYtb\nVersion: %c1.0%c\nActivation: %c" + (!url.includes("moodle") && !url.includes("moodle")).toString() + "%c\n\nSource: https://github.com/NonozgYtb/mbn-enhancement-suite\n", "font-size: 25px; font-family: Arial;font-weight: bold;", "font-size: 18px; font-family: Arial;font-weight: bold; padding: 10px 0;", "color: #aaa", "color: #009378", "color: #aaa", "color: #009378", "color: #aaa")
     }
 })();
