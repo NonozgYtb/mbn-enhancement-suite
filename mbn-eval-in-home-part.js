@@ -32,7 +32,7 @@ const consoleClear = true;
                 c.classList = "col--xs-12 col--lg-12";
                 c.style.height = "-webkit-fill-available";
                 c.id = "iiiidddd";
-                c.src = "https://clg-anne-frank-illzach.monbureaunumerique.fr/sg.do?PROC=CONSULTER_RELEVE&amp;ACTION=AFFICHER_RELEVE_NOTES_ELEVE";
+                c.src = `https://${window.location.hostname.split(".")[0]}.monbureaunumerique.fr/sg.do?PROC=CONSULTER_RELEVE&amp;ACTION=AFFICHER_RELEVE_NOTES_ELEVE`;
                 var r = document.createElement("ul");
                 var y = document.createElement("div");
                 y.classList = "panel panel--outlined";
